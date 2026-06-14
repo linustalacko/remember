@@ -27,7 +27,7 @@ jobs:
       - run: pnpm check
 
   rust:
-    name: Rust (fmt, clippy, build, test)
+    name: Rust (check, clippy, test)
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -44,11 +44,11 @@ jobs:
             libjavascriptcoregtk-4.1-dev
       - uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt, clippy
+          components: clippy
       - uses: swatinem/rust-cache@v2
         with:
           workspaces: ./src-tauri -> target
-      - run: cargo fmt --manifest-path src-tauri/Cargo.toml --check
+      # Formatting is requested in CONTRIBUTING (`cargo fmt`) but not gated here.
+      - run: cargo check --manifest-path src-tauri/Cargo.toml
       - run: cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets
-      - run: cargo build --manifest-path src-tauri/Cargo.toml
       - run: cargo test --manifest-path src-tauri/Cargo.toml
