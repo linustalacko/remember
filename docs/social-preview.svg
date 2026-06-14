@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#faf7f2"/>
+      <stop offset="1" stop-color="#f1e9dc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+    <text x="96" y="244" font-size="96" font-weight="700" fill="#1c1917" letter-spacing="-3">Remember</text>
+    <text x="100" y="306" font-size="30" font-weight="500" fill="#57534e">Local-first spaced repetition.</text>
+    <text x="100" y="346" font-size="30" font-weight="500" fill="#57534e">An open-source Anki.</text>
+    <rect x="100" y="372" width="116" height="6" rx="3" fill="#c2410c"/>
+    <text x="100" y="552" font-size="23" font-weight="500" fill="#b1a99c">github.com/linustalacko/remember</text>
+  </g>
+  <g transform="translate(776,168)">
+    <rect x="9" y="13" width="420" height="300" rx="22" fill="#000000" opacity="0.06"/>
+    <rect x="0" y="0" width="420" height="300" rx="22" fill="#ffffff" stroke="#e7e1d6" stroke-width="2"/>
+    <text x="40" y="84" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="27" font-weight="600" fill="#1c1917">What is spaced</text>
+    <text x="40" y="118" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="27" font-weight="600" fill="#1c1917">repetition?</text>
+    <line x1="40" y1="148" x2="380" y2="148" stroke="#efe9df" stroke-width="2"/>
+    <text x="40" y="190" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" fill="#78716c">Review at increasing intervals,</text>
+    <text x="40" y="216" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="20" fill="#78716c">just before you forget.</text>
+    <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" font-weight="600">
+      <rect x="40" y="244" width="74" height="34" rx="17" fill="#f5f0e8" stroke="#e7e1d6"/>
+      <text x="77" y="266" text-anchor="middle" fill="#78716c">Again</text>
+      <rect x="122" y="244" width="74" height="34" rx="17" fill="#f5f0e8" stroke="#e7e1d6"/>
+      <text x="159" y="266" text-anchor="middle" fill="#78716c">Hard</text>
+      <rect x="204" y="244" width="74" height="34" rx="17" fill="#c2410c"/>
+      <text x="241" y="266" text-anchor="middle" fill="#ffffff">Good</text>
+      <rect x="286" y="244" width="74" height="34" rx="17" fill="#f5f0e8" stroke="#e7e1d6"/>
+      <text x="323" y="266" text-anchor="middle" fill="#78716c">Easy</text>
+    </g>
+  </g>
+</svg>
