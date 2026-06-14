@@ -125,3 +125,37 @@ and feature requests go in
 ## License
 
 [MIT](LICENSE) © Linus Talacko
+
+
+## Remember vs Anki
+
+Remember is an open-source, local-first **alternative to Anki** for people who want a small, native desktop app they fully own. It isn't trying to replace Anki's huge ecosystem — here's an honest comparison.
+
+| | Remember | Anki |
+| --- | --- | --- |
+| License | MIT, open source | Open source (AGPL) |
+| Price | Free | Free desktop; paid iOS app |
+| Scheduler | Faithful SM-2 | SM-2 + FSRS |
+| Imports your Anki collection | Yes — `.anki2` decks, cards, scheduling state, full review history | — |
+| Data location | Local SQLite, fully offline | Local; optional AnkiWeb sync |
+| Sync | Optional, via your own Turso database (no central server) | AnkiWeb (Anki's servers) |
+| Account required | No | Optional (AnkiWeb) |
+| Add-ons | Not yet | Huge ecosystem |
+| Mobile apps | Not yet | AnkiDroid (free), AnkiMobile (paid) |
+| Platforms | macOS, Windows, Linux | macOS, Windows, Linux, mobile |
+
+**Choose Remember** if you want a clean, native, local-first SRS app you fully control — no account, no cloud — and you'd like to bring your existing Anki deck with you.
+
+**Stick with Anki** if you rely on FSRS, add-ons, shared decks, or a mobile app today. Remember imports your collection, so you can try it without losing anything.
+
+## FAQ
+
+**Is Remember an open-source Anki?** It's an independent app inspired by Anki: MIT-licensed, local-first, with a faithful SM-2 scheduler and an importer for your existing `.anki2` collection. Not affiliated with Anki.
+
+**Will it change my Anki collection?** No. Importing reads a copy of your `.anki2` file; your Anki install is untouched.
+
+**Does it support FSRS?** Not yet — today it's a faithful SM-2 implementation. FSRS is on the roadmap.
+
+**Is my data private?** Yes — local SQLite, fully offline, no account, no telemetry. Optional sync uses your own Turso database; your token is stored device-locally and never synced.
+
+**Is it free?** Yes — MIT-licensed and free.
