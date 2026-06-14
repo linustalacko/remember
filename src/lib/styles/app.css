@@ -1,0 +1,191 @@
+/* ============================================================================
+   Remember — design system
+   Principles (Dieter Rams / Jony Ive): as little design as possible, honest
+   materials, deference to content, obsessive precision. Every spatial value is
+   a multiple of 4. Restrained warm-neutral palette, one functional accent,
+   hairline structure, soft depth, calm motion.
+   ============================================================================ */
+
+:root {
+  /* ---- spacing: strict 4px grid ---- */
+  --s1: 4px;   --s2: 8px;   --s3: 12px;  --s4: 16px;  --s5: 20px;
+  --s6: 24px;  --s7: 28px;  --s8: 32px;  --s9: 36px;  --s10: 40px;
+  --s12: 48px; --s14: 56px; --s16: 64px; --s18: 72px; --s20: 80px;
+  --s24: 96px; --s28: 112px; --s32: 128px;
+
+  /* ---- radii ---- */
+  --r1: 3px; --r2: 6px; --r3: 10px; --r4: 12px; --r5: 16px; --r6: 20px;
+  --r-full: 999px;
+
+  /* every page shares one content width */
+  --page-w: 760px;
+  /* sidebar row height (a touch taller for more padding) */
+  --nav-h: 52px;
+
+  /* ---- type scale ---- */
+  --t-xs: 12px; --t-sm: 13px; --t-base: 15px; --t-md: 17px;
+  --t-lg: 20px; --t-xl: 24px; --t-2xl: 32px; --t-3xl: 44px; --t-4xl: 56px;
+  --lh-tight: 1.08; --lh-snug: 1.3; --lh-normal: 1.55;
+  --tracking-tight: -0.02em; --tracking-normal: 0; --tracking-wide: 0.04em;
+
+  --font: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-num: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* ---- motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur1: 120ms; --dur2: 200ms; --dur3: 320ms; --dur4: 480ms;
+
+  /* ---- light palette: neutral monochrome, white content / grey nav ---- */
+  --bg: #ffffff;              /* main content: pure white */
+  --surface: #ffffff;
+  --surface-2: #eeeef1;       /* nav: light off-white grey */
+  --surface-sunken: #e4e4e9;
+  --nav-pill: #ffffff;        /* selected nav item — lighter than the nav */
+  --text: #18181a;
+  --text-2: #6b6b70;
+  --text-3: #a1a1a8;
+  --hairline: rgba(0, 0, 0, 0.07);
+  --hairline-2: rgba(0, 0, 0, 0.13);
+
+  --accent: #18181a;          /* monochrome ink */
+  --accent-hover: #000000;
+  --accent-soft: rgba(0, 0, 0, 0.06);
+  --accent-text: #ffffff;
+
+  /* grading — a single ink, stepped by tone (light → dark = again → easy) */
+  --again: #aeaeb4;  --again-soft: rgba(0, 0, 0, 0.04);
+  --hard:  #82828a;  --hard-soft:  rgba(0, 0, 0, 0.06);
+  --good:  #4d4d54;  --good-soft:  rgba(0, 0, 0, 0.09);
+  --easy:  #18181a;  --easy-soft:  rgba(0, 0, 0, 0.12);
+
+  /* macOS overlay title bar inset (content clears the traffic lights) */
+  --titlebar: 28px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 1px rgba(0, 0, 0, 0.03);
+  --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-3: 0 16px 48px rgba(0, 0, 0, 0.13), 0 4px 12px rgba(0, 0, 0, 0.08);
+  --focus: 0 0 0 3px var(--accent-soft);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c0c0d;
+    --surface: #161617;
+    --surface-2: #1d1d1f;
+    --surface-sunken: #09090a;
+    --nav-pill: #2e2e33;        /* selected nav item — lighter than the nav */
+    --text: #f2f2f3;
+    --text-2: #a0a0a5;
+    --text-3: #6c6c71;
+    --hairline: rgba(255, 255, 255, 0.08);
+    --hairline-2: rgba(255, 255, 255, 0.14);
+
+    --accent: #f2f2f3;
+    --accent-hover: #ffffff;
+    --accent-soft: rgba(255, 255, 255, 0.13);
+    --accent-text: #0c0c0d;
+
+    --again: #6c6c71; --again-soft: rgba(255, 255, 255, 0.05);
+    --hard:  #909096; --hard-soft:  rgba(255, 255, 255, 0.08);
+    --good:  #b9b9be; --good-soft:  rgba(255, 255, 255, 0.11);
+    --easy:  #f2f2f3; --easy-soft:  rgba(255, 255, 255, 0.14);
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-3: 0 16px 48px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* ---- reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font);
+  font-size: var(--t-base);
+  line-height: var(--lh-normal);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+:focus { outline: none; }
+:focus-visible { box-shadow: var(--focus); border-radius: var(--r2); }
+::selection { background: var(--accent-soft); }
+
+/* tasteful scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: var(--hairline-2);
+  border-radius: var(--r-full);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); background-clip: padding-box; }
+
+/* ---- shared primitives ---- */
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  height: var(--s9); padding: 0 var(--s4);
+  border-radius: var(--r2);
+  font-size: var(--t-base); font-weight: 510;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--hairline-2);
+  transition: background var(--dur1) var(--ease), border-color var(--dur1) var(--ease),
+    transform var(--dur1) var(--ease), box-shadow var(--dur1) var(--ease);
+}
+.btn:hover { background: var(--surface-2); border-color: var(--text-3); }
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.4; pointer-events: none; }
+
+.btn-primary {
+  background: var(--accent); color: var(--accent-text);
+  border-color: transparent; box-shadow: var(--shadow-1);
+}
+.btn-primary:hover { background: var(--accent-hover); border-color: transparent; }
+
+.btn-ghost { background: transparent; border-color: transparent; }
+.btn-ghost:hover { background: var(--surface-sunken); border-color: transparent; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  height: var(--s6); padding: 0 var(--s3);
+  border-radius: var(--r-full);
+  font-size: var(--t-sm); font-weight: 500;
+  background: var(--surface-sunken); color: var(--text-2);
+}
+
+.input {
+  width: 100%; height: var(--s10);
+  padding: 0 var(--s4);
+  background: var(--surface);
+  border: 1px solid var(--hairline-2);
+  border-radius: var(--r2);
+  font-size: var(--t-base);
+  transition: border-color var(--dur1) var(--ease), box-shadow var(--dur1) var(--ease);
+}
+.input:focus { border-color: var(--accent); box-shadow: var(--focus); }
+textarea.input { height: auto; min-height: var(--s16); padding: var(--s3) var(--s4); resize: vertical; line-height: var(--lh-snug); }
+
+.label { font-size: var(--t-sm); font-weight: 560; color: var(--text-2); letter-spacing: var(--tracking-wide); text-transform: uppercase; }
+
+.card-surface {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r4);
+}
+
+.muted { color: var(--text-2); }
+.faint { color: var(--text-3); }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pop { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
