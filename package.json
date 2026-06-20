@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
-    "dompurify": "^3.2.4"
+    "dompurify": "^3.4.11"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.6",
